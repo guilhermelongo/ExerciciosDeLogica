@@ -1,0 +1,185 @@
+ex1
+using System;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int cod1, cod2, nump1, nump2;
+            double valp1, valp2, valfinal, valorffinal;
+
+            Console.WriteLine("Informe o codigo da peca 1:");
+            cod1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Informe o numero das pecas :");
+            nump1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Informe o valor das pecas :");
+            valp1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Informe o codigo da peca 2:");
+            cod2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Informe o numero das pecas :");
+            nump2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Informe o valor das pecas :");
+            valp2 = double.Parse(Console.ReadLine());
+
+            valfinal = (nump1 * valp1);
+            valorffinal = valfinal + (nump2 * valp2);
+
+
+            Console.WriteLine($"Valor total da compra:  {valorffinal:F2} reais");
+
+        }
+    }
+}
+
+ex2
+using System;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double raio, area;
+
+            Console.WriteLine("Informe o raio:");
+            raio = double.Parse(Console.ReadLine());
+
+            area = 3.14159 * (raio * raio);
+            Console.WriteLine($"Raio do circulo: {area:F4}");
+
+        }
+    }
+}
+ex3
+
+using System;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double cod, quant, total;
+
+            Console.WriteLine("Informe o Codigo do Produto: ");
+            cod = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Informe a quantidade do Produto: ");
+            quant = double.Parse(Console.ReadLine());
+
+            if (cod == 1)
+            {
+                total = quant * 4.00;
+                Console.WriteLine("Valor da compra = " + total);
+            }
+            else if (cod == 2)
+            {
+                total = quant * 4.50;
+                Console.WriteLine("Valor da compra = " + total);
+            }
+            else if (cod == 3)
+            {
+                total = quant * 5.00;
+                Console.WriteLine("Valor da compra = " + total);
+            }
+            else if (cod == 4)
+            {
+                total = quant * 2.00;
+                Console.WriteLine("Valor da compra = " + total);
+            }
+            else 
+            {
+                total = quant * 1.50;
+                Console.WriteLine("Valor da compra = " + total);
+            }
+
+
+
+        }
+    }
+}
+
+ex4
+
+using System;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int cont = 1;
+            int senha;
+
+            while (cont > 0)
+            {
+
+                Console.WriteLine("Senha: ");
+                senha = int.Parse(Console.ReadLine());
+
+                if (senha == 2002)
+                {
+                    Console.WriteLine("Senha correta! 2002");
+                    cont = 0;
+                }
+
+                else
+                {
+                    Console.WriteLine("Senha incorreta!! ");
+                }
+
+            }
+        }
+    }
+}
+ex 5
+
+using System;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 1;
+            int cont;
+            double num;
+            int cont2 = 0;
+            int cont3 = 0;
+
+            Console.WriteLine("Insira o numero de lacos");
+            i = int.Parse(Console.ReadLine());
+
+            for (cont = 1; cont <= i; cont ++)
+            {
+                Console.WriteLine("Insira um numero: ");
+                num = double.Parse(Console.ReadLine());
+
+                if (num >= 10 && num <= 20)
+                {
+                    cont2++; 
+                }
+                else
+                {
+                    cont3++;
+                }
+            }
+
+            Console.WriteLine(cont2 + " in");
+
+            Console.WriteLine(cont3 + " out");
+
+        }
+    }
+}

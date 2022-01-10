@@ -1,0 +1,605 @@
+primeria funcao
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n1, n2, n3;
+
+            Console.WriteLine("Escreva tres numeros: ");
+
+            n1 = int.Parse(Console.ReadLine());
+            n2 = int.Parse(Console.ReadLine());
+            n3 = int.Parse(Console.ReadLine());
+
+            double resultado = Maior (n1, n2, n3);
+            
+            Console.WriteLine("Maior = " + resultado);
+
+        }
+
+        static int Maior (int a,int b ,int  c) 
+        {
+            int m;
+            if (a > b && a > c)
+            {
+                m = a;
+            }
+
+            else if (b > a && b > c)
+            {
+                m = b;
+            }
+
+            else
+            {
+                m = c;
+            }
+            return m;
+        }
+    }
+}
+
+ex do salario em horas 
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num;
+            double numhoras, valhoras, salario;
+
+            num = int.Parse(Console.ReadLine());
+
+            numhoras = int.Parse(Console.ReadLine());
+
+            valhoras = double.Parse(Console.ReadLine());
+
+
+            salario = numhoras * valhoras;
+
+            Console.WriteLine("Number = " + num);
+            Console.WriteLine("Salary = " + salario.ToString("F2", CultureInfo.InvariantCulture));
+
+
+        }
+    }
+}
+
+exercicio das figuras geometricas
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, c;
+
+            double tri, circ, trap, quad, ret;
+            circ = 0;
+
+
+            a = double.Parse(Console.ReadLine());
+            b = double.Parse(Console.ReadLine());
+            c = double.Parse(Console.ReadLine());
+
+            tri = c * a / 2;
+            circ = 3.14159 * (c * c);
+            trap = (a + b) * c / 2;
+            quad = b * b;
+            ret = b * a; 
+
+            Console.WriteLine("Triangulo:" + tri.ToString("F3", CultureInfo.InvariantCulture));
+            Console.WriteLine("Circulo:" + circ.ToString("F3", CultureInfo.InvariantCulture));
+            Console.WriteLine("Trapezio:" + trap.ToString("F3", CultureInfo.InvariantCulture));
+            Console.WriteLine("Quadrado:" + quad.ToString("F3", CultureInfo.InvariantCulture));
+            Console.WriteLine("Retangulo:" + ret.ToString("F3", CultureInfo.InvariantCulture));
+        }
+    }
+}
+
+EXERCICIO DO GRAFICO X E Y
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double n1, n2;
+
+            n1 = double.Parse(Console.ReadLine());
+            n2 = double.Parse(Console.ReadLine());
+
+            if (n1 > 0 && n2 > 0)
+            {
+                Console.WriteLine("Q1");
+            }
+            else if (n1 < 0 && n2 < 0)
+            {
+                Console.WriteLine("Q3");
+            }
+            else if (n1 > 0 && n2 < 0)
+            {
+                Console.WriteLine("Q4");
+            }
+            else if (n1 < 0 && n2 > 0)
+            {
+                Console.WriteLine("Q2");
+
+            }
+
+            else
+            {
+                Console.WriteLine("ORIGEM");
+            }
+
+        }
+    }
+}
+
+ex imposto salario 
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            double imposto;
+            if (salario <= 2000.0)
+            {
+                imposto = 0.0;
+            }
+            else if (salario <= 3000.0)
+            {
+                imposto = (salario - 2.000) * 0.08;
+            }
+            else if (salario <= 4500.0)
+            {
+                imposto = (salario - 3000.0) * 0.18 + 1000.0 * 0.08;
+            }
+            else
+            {
+                double imposto2;
+                double imposto3;
+                imposto = (salario - 4500.0) * 0.28;
+                imposto2 = imposto + (1500.0 * 0.18); 
+                imposto3 = imposto2 + (1000.0 * 0.08);
+                imposto = imposto3;
+            }
+
+            if (imposto == 0.0)
+            {
+                Console.WriteLine(" Isento ");
+            }
+            else
+            {
+                Console.WriteLine("R$ " + imposto.ToString("F2", CultureInfo.InvariantCulture));
+            }
+
+        }
+    }
+}
+
+intervalos
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double val;
+
+
+            val = double.Parse(Console.ReadLine());
+
+
+
+            if (val > 25 && val <= 50)
+            {
+                Console.WriteLine("intervalo (25,50)");
+            }
+
+            else if (val >= 0 && val <= 25)
+            {
+                Console.WriteLine("intervalo (0,25)");
+            }
+
+            else if (val >= 75 && val <= 100)
+            {
+                Console.WriteLine("Intervalo (75,100)");
+            }
+
+            else
+            {
+                Console.WriteLine("fora do intervalo");
+            }
+
+        }
+    }
+}
+
+tempo de jogo 
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double inicio, fim, tempot;
+
+            inicio = double.Parse(Console.ReadLine());
+            fim = double.Parse(Console.ReadLine());
+
+            if (inicio < fim)
+            {
+                tempot = inicio - fim;
+            }
+            else 
+            {
+                tempot = 24 - inicio + fim;
+            }
+
+            Console.WriteLine(tempot);
+        }
+    }
+}
+
+quadrante com valor nulo
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int x, y;
+
+            Console.WriteLine("Escreva dois numeros: ");
+
+            x = int.Parse(Console.ReadLine());
+            y = int.Parse(Console.ReadLine());
+
+
+            while (x != 0 && y != 0)
+            {
+
+                if (x > 0 && y > 0)
+                {
+                    Console.WriteLine("Q1");
+                    x = int.Parse(Console.ReadLine());
+                    y = int.Parse(Console.ReadLine());
+
+                }
+                else if (x < 0 && y < 0)
+                {
+                    Console.WriteLine("Q3");
+                    x = int.Parse(Console.ReadLine());
+                    y = int.Parse(Console.ReadLine());
+
+                }
+                else if (x < 0 && y > 0)
+                {
+                    Console.WriteLine("Q2");
+                    x = int.Parse(Console.ReadLine());
+                    y = int.Parse(Console.ReadLine());
+
+                }
+                else
+                {
+                    Console.WriteLine("Q4");
+                    x = int.Parse(Console.ReadLine());
+                    y = int.Parse(Console.ReadLine());
+
+                }
+
+
+            }
+
+        }
+    }
+}
+
+posto de gasolina
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int combustivel ,gas = 0, alc = 0, die = 0;
+            Console.WriteLine("Selecione o seu Combustivel:");
+            Console.WriteLine("1-Gasolina");
+            Console.WriteLine("2-Alcool");
+            Console.WriteLine("3-Diesel");
+            Console.WriteLine("4-Sair");
+            
+            combustivel = int.Parse(Console.ReadLine());
+
+            while (combustivel > 0 && combustivel< 5)
+            {
+                if (combustivel == 1)
+                {
+                    gas++;
+                    combustivel = int.Parse(Console.ReadLine());
+                }
+                else if (combustivel == 2)
+                {
+                    alc++;
+                    combustivel = int.Parse(Console.ReadLine());
+
+                }
+                else if (combustivel == 3)
+                {
+                    die++;
+                    combustivel = int.Parse(Console.ReadLine());
+                }
+                
+                else
+                {
+                    Console.WriteLine("Muito Obrigado");
+                    combustivel = 6;
+                    Console.WriteLine("Gasolina: " + gas);
+                    Console.WriteLine("Alcool: " + alc);
+                    Console.WriteLine("Diesel: " + die);
+                }
+
+            }
+
+        }
+    }
+}
+
+separando par de impar
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int x, aux = 0;
+            
+
+            x = int.Parse(Console.ReadLine());
+
+
+            for (int i = 1; i <= x; i++)
+            {
+
+              if(i % 2 != 0)
+              {
+                    Console.WriteLine(i);
+              }
+
+            }
+
+        }
+    }
+}
+
+intervalos com for
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n, x = 0, cont = 0, cont2 = 0 ;
+            
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                x = int.Parse(Console.ReadLine());
+
+                if(x >=10 && x <=20)
+                {
+                    
+                    cont++;
+                }
+                else
+                {
+                    cont2++;
+                }
+
+            }
+
+            Console.WriteLine("in:" + cont);
+            Console.WriteLine("out:" + cont2);
+
+        }
+    }
+}
+
+media ponderada for
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double n, x = 0, num1 = 0, num2 = 0, num3 = 0, final=0, aux =0 ;
+            
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                num1 = double.Parse(Console.ReadLine());
+                num2 = double.Parse(Console.ReadLine());
+                num3  = double.Parse(Console.ReadLine());
+
+                final = (num1 * 2) + (num2 * 3);
+                aux = final + (num3 * 5);
+                final = aux / 10;
+               Console.WriteLine("" + final.ToString("F1", CultureInfo.InvariantCulture));
+            }
+
+            
+        }
+    }
+}
+
+divisao for
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n ;
+            double soma = 0, num1 = 0, num2 = 0;
+
+
+            n = int.Parse(Console.ReadLine());
+
+
+            for (int i = 1; i <= n; i++)
+            {
+
+                num1 = int.Parse(Console.ReadLine());
+                num2 = int.Parse(Console.ReadLine());
+
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Divisao impossivel");
+                }
+                else
+                {
+
+                    soma = num1 / num2;
+
+                    Console.WriteLine("" + soma.ToString("F2", CultureInfo.InvariantCulture));
+                }
+
+            }
+
+        }
+    }
+}
+
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n;
+            double soma = 1;
+
+
+            n = int.Parse(Console.ReadLine());
+
+
+            for (int i = 1; i <= n; i++)
+            {
+                soma = soma * i;
+            }
+            Console.WriteLine(soma);
+
+        }
+    }
+}
+
+DIVISORES	
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n = 0, divisores = 0;
+
+
+            n = int.Parse(Console.ReadLine());
+
+
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+
+                    Console.WriteLine(i);
+               
+            }
+
+        }
+    }
+}
+quadrado e cubo 
+using System;
+using System.Globalization;
+
+namespace ProvaDeLogica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n, num1, quad, cub;
+
+            n =int.Parse(Console.ReadLine());
+
+            for(int i = 0; i < n; i++)
+            {
+
+                num1 = int.Parse(Console.ReadLine());
+                quad = num1 * num1;
+                cub = quad * num1;
+                Console.WriteLine(num1 + " " + quad + " " + cub);
+
+            }
+
+        }
+    }
+}
